@@ -81,10 +81,10 @@ const HeroSection = () => {
 
         {/* Brand — letter-by-letter stagger */}
         <div className="mb-6 flex overflow-hidden">
-          {"NOSIGNAL".split("").map((char, i) => (
+          {"NO SIGNAL".split("").map((char, i) => (
             <motion.span
               key={i}
-              className="inline-block text-[14vw] font-extralight leading-[0.85] tracking-[-0.04em] md:text-[10vw]"
+              className={`inline-block text-[14vw] font-extralight leading-[0.85] tracking-[-0.04em] md:text-[10vw] ${char === " " ? "w-[3vw] md:w-[2vw]" : ""}`}
               initial={{ y: "110%" }}
               animate={hasLoaded ? { y: "0%" } : {}}
               transition={{
@@ -93,13 +93,7 @@ const HeroSection = () => {
                 ease: easeOut,
               }}
             >
-              {i === 2 ? (
-                <span className="inline-block w-[3vw] md:w-[2vw]" />
-              ) : null}
-              {char === "I" && i > 2 ? char : char}
-              {i === 1 ? (
-                <span className="inline-block w-[3vw] md:w-[2vw]" />
-              ) : null}
+              {char === " " ? "\u00A0" : char}
             </motion.span>
           ))}
         </div>
