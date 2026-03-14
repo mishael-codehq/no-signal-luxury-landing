@@ -8,7 +8,7 @@ const images = [
   "https://images.unsplash.com/photo-1550639525-c97d455acf70?auto=format&fit=crop&q=80&w=1200",
 ];
 
-const easeOut = [0.22, 1, 0.36, 1];
+const easeOut: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
